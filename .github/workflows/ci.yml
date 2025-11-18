@@ -1,0 +1,138 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run weekly on Monday at 00:00 UTC to check for broken links
+    - cron: '0 0 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  markdown-lint:
+    name: Markdown Lint
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Lint Markdown files
+        uses: articulate/actions-markdownlint@v1
+        with:
+          config: .markdownlint.json
+          files: '**/*.md'
+          ignore: node_modules
+        continue-on-error: true
+
+  link-check:
+    name: Check Links
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check links in markdown files
+        uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          use-quiet-mode: 'yes'
+          use-verbose-mode: 'no'
+          config-file: '.markdown-link-check.json'
+        continue-on-error: true
+
+  spelling:
+    name: Spell Check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check spelling
+        uses: rojopolis/spellcheck-github-actions@0.36.0
+        with:
+          config_path: .spellcheck.yml
+        continue-on-error: true
+
+  file-structure:
+    name: Validate File Structure
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check for required files
+        run: |
+          echo "Checking for required repository files..."
+          required_files=(
+            "README.md"
+            "LICENSE"
+            "CONTRIBUTING.md"
+            "CODE_OF_CONDUCT.md"
+            "SECURITY.md"
+            ".gitignore"
+            "CHANGELOG.md"
+          )
+          
+          missing_files=()
+          for file in "${required_files[@]}"; do
+            if [ ! -f "$file" ]; then
+              missing_files+=("$file")
+            fi
+          done
+          
+          if [ ${#missing_files[@]} -gt 0 ]; then
+            echo "❌ Missing required files:"
+            printf '%s\n' "${missing_files[@]}"
+            exit 1
+          else
+            echo "✅ All required files present"
+          fi
+
+  readme-validation:
+    name: Validate README Structure
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check README structure
+        run: |
+          echo "Validating README.md structure..."
+          
+          # Check for key sections
+          required_sections=(
+            "Core Assumptions"
+            "13-Week Overview"
+            "Contributing"
+            "License"
+            "Community & Support"
+          )
+          
+          for section in "${required_sections[@]}"; do
+            if ! grep -q "$section" README.md; then
+              echo "❌ Missing section: $section"
+              exit 1
+            fi
+          done
+          
+          echo "✅ README structure validated"
+          
+          # Check for badges
+          if ! grep -q "img.shields.io" README.md; then
+            echo "⚠️  No badges found in README"
+          else
+            echo "✅ README has badges"
+          fi

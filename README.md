@@ -1,5 +1,31 @@
 # 90-Day Backend Engineering Roadmap
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](CONTRIBUTING.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![Code of Conduct](https://img.shields.io/badge/code%20of%20conduct-contributor%20covenant-purple.svg)](CODE_OF_CONDUCT.md)
+
+> Transform from Python basics to production-ready backend developer in 90 days with this comprehensive, structured learning path. Build 3 portfolio-grade projects while mastering FastAPI, PostgreSQL, Redis, LLM APIs, and deployment.
+
+---
+
+## 📚 Table of Contents
+
+- [Core Assumptions](#core-assumptions)
+- [13-Week Overview](#13-week-overview)
+- [Week 1-2: Python 3 & OOP Foundations](#week-1-2-python-3--oop-foundations)
+- [Week 3-4: FastAPI Fundamentals](#week-3-4-fastapi-fundamentals)
+- [Week 5-6: Database Layer & ORM](#week-5-6-database-layer--orm)
+- [Week 7-8: Modular Architecture](#week-7-8-modular-architecture)
+- [Week 9: Event-Driven Design](#week-9-event-driven-design)
+- [Week 10-11: LLM API Integration](#week-10-11-llm-api-integration)
+- [Week 12-13: Deployment & Capstone](#week-12-13-deployment--capstone)
+- [Contributing](#contributing)
+- [License](#license)
+- [Community & Support](#community--support)
+
+---
+
 ## Core Assumptions
 
 - **Starting Knowledge:** Basic Python syntax (variables, loops, functions, lists, dictionaries)
@@ -3166,3 +3192,105 @@ Simplify by removing chat module and notification system. Focus on content CRUD 
 - ✅ Complete capstone project
 - ✅ Portfolio-ready documentation
 - ✅ Live production deployment
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions from the community! Whether you want to:
+
+- Report a bug or broken link
+- Suggest improvements to the curriculum
+- Add new resources or exercises
+- Fix typos or clarify content
+- Translate to other languages
+
+Please read our [Contributing Guidelines](CONTRIBUTING.md) to get started.
+
+### Quick Contribution Steps
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/improve-week-5`)
+3. Make your changes
+4. Commit with clear messages
+5. Push to your fork
+6. Open a Pull Request
+
+See our [Pull Request Template](.github/PULL_REQUEST_TEMPLATE.md) for details on what to include.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+You are free to:
+- ✅ Use this roadmap for personal learning
+- ✅ Share it with others
+- ✅ Modify it for your needs
+- ✅ Use it in educational settings
+
+---
+
+## 🌟 Community & Support
+
+### Getting Help
+
+- **Questions about content?** Open a [Question Issue](.github/ISSUE_TEMPLATE/question.md)
+- **Found a bug?** Report it using our [Bug Report Template](.github/ISSUE_TEMPLATE/bug_report.md)
+- **Have suggestions?** Submit a [Feature Request](.github/ISSUE_TEMPLATE/feature_request.md)
+- **Content outdated?** Use the [Content Update Template](.github/ISSUE_TEMPLATE/content_update.md)
+
+### Code of Conduct
+
+This project follows the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior through GitHub issues.
+
+### Security
+
+Found a security issue in the learning materials? Please review our [Security Policy](SECURITY.md) for responsible disclosure.
+
+### Stay Connected
+
+- ⭐ Star this repository to show your support
+- 👀 Watch for updates and new content
+- 🔀 Fork to customize for your learning journey
+- 📢 Share with others learning backend development
+
+### Acknowledgments
+
+This roadmap is inspired by the real-world needs of backend developers and feedback from learners worldwide. Special thanks to:
+
+- The Python community for excellent documentation
+- FastAPI, SQLAlchemy, and other open-source maintainers
+- Real Python, ArjanCodes, Corey Schafer, and other educators
+- All contributors who help improve this resource
+
+---
+
+## 📊 Repository Stats
+
+![GitHub stars](https://img.shields.io/github/stars/ehtisham-sadiq/how-to-become-a-backend-developer?style=social)
+![GitHub forks](https://img.shields.io/github/forks/ehtisham-sadiq/how-to-become-a-backend-developer?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/ehtisham-sadiq/how-to-become-a-backend-developer?style=social)
+
+---
+
+## 🎯 Your Journey Starts Here
+
+Ready to transform your career in 90 days? 
+
+1. **Fork this repository** to track your progress
+2. **Start with Day 1** and commit consistently
+3. **Build all projects** to solidify your learning
+4. **Share your journey** to stay accountable
+5. **Help others** by contributing back
+
+**Remember:** Consistency beats intensity. 120 minutes daily for 90 days will transform you into a backend developer.
+
+**Good luck on your journey! 🚀**
+
+---
+
+*Last Updated: November 2024*
+*Version: 1.0.0*
+*Maintained by: [Ehtisham Sadiq](https://github.com/ehtisham-sadiq)*
