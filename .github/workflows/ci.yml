@@ -9,10 +9,15 @@ on:
     # Run weekly on Monday at 00:00 UTC to check for broken links
     - cron: '0 0 * * 1'
 
+permissions:
+  contents: read
+
 jobs:
   markdown-lint:
     name: Markdown Lint
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -28,6 +33,8 @@ jobs:
   link-check:
     name: Check Links
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -43,6 +50,8 @@ jobs:
   spelling:
     name: Spell Check
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -56,6 +65,8 @@ jobs:
   file-structure:
     name: Validate File Structure
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -91,6 +102,8 @@ jobs:
   readme-validation:
     name: Validate README Structure
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
