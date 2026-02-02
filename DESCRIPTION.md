@@ -4,11 +4,11 @@
 
 This repository provides a comprehensive, structured learning path for aspiring backend developers to transform from Python basics to production-ready backend engineering skills in just 90 days.
 
-### 🎯 What This Repository Offers
+### What This Repository Offers
 
 A day-by-day curriculum designed for consistent learners who can dedicate 2 hours daily to master backend development. The roadmap is specifically crafted for individuals with limited bandwidth, prioritizing text-based documentation and practical projects over video content.
 
-### 📚 Core Learning Path
+### Core Learning Path
 
 **13-Week Structured Journey:**
 
@@ -20,7 +20,7 @@ A day-by-day curriculum designed for consistent learners who can dedicate 2 hour
 6. **Weeks 10-11:** LLM API Integration - Develop AI Chatbot Backend
 7. **Weeks 12-13:** Deployment & Capstone - Deploy Production AI Service
 
-### 🛠️ Technologies Covered
+### Technologies Covered
 
 - **Programming:** Python 3.11+, Modern Syntax, Type Hints, OOP
 - **Web Framework:** FastAPI, Pydantic, Async Programming
@@ -32,7 +32,7 @@ A day-by-day curriculum designed for consistent learners who can dedicate 2 hour
 - **Deployment:** Render, Railway, Production Configuration
 - **Monitoring:** Structured Logging, Error Tracking
 
-### 🎓 Target Audience
+### Target Audience
 
 This roadmap is ideal for:
 - **Beginners** with basic Python knowledge wanting to become backend developers
@@ -41,14 +41,14 @@ This roadmap is ideal for:
 - **Career switchers** transitioning to backend development
 - Anyone committed to **120 minutes of daily practice** for 90 days
 
-### 📋 Prerequisites
+### Prerequisites
 
 - Basic Python syntax (variables, loops, functions, lists, dictionaries)
 - Access to VS Code, Git, Python 3.11+
 - PostgreSQL (local or Docker)
 - Consistent daily commitment of 2 hours
 
-### 🚀 End Goal
+### End Goal
 
 By completing this roadmap, you will:
 - Build **3 production-grade portfolio projects**
@@ -58,7 +58,7 @@ By completing this roadmap, you will:
 - Have a GitHub profile showcasing 90 days of consistent commits
 - Be prepared for junior backend developer positions
 
-### 💡 Unique Features
+### Unique Features
 
 - **Bandwidth-Optimized:** Prioritizes text documentation over video content
 - **Daily Structure:** Each day has a clear 120-minute breakdown
@@ -68,7 +68,7 @@ By completing this roadmap, you will:
 - **Real Resources:** Links to official documentation and quality tutorials
 - **Portfolio-Ready:** Projects designed to impress potential employers
 
-### 📖 Repository Structure
+### Repository Structure
 
 Each day includes:
 - Clear learning objectives
@@ -79,7 +79,7 @@ Each day includes:
 - Practical "Why It Matters" explanations
 - Contingency plans if you fall behind
 
-### 🏆 Final Deliverables
+### Final Deliverables
 
 Upon completion, you'll have:
 - A CLI Task Manager (Python OOP)
