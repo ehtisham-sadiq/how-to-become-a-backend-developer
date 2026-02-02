@@ -1,82 +1,136 @@
-# Enhancements Guide
+# Comprehensive Enhancement Guide
 
-## Testing & TDD
+## Testing & TDD (Day 22.5)
 
-Testing and Test-Driven Development (TDD) ensure that your code is reliable and meets the requirements. Here’s how you can get started:
+### Overview
+Testing is crucial for ensuring code quality and reliability. Test-Driven Development (TDD) encourages writing tests before coding to promote better design and higher quality.
 
-### Importance of Testing
-- Validates the functionality of existing code.
-- Helps refactor code with confidence.
+### Full pytest Examples
+```python
+# Example of a simple test
+import pytest
 
-### Types of Tests
-- **Unit Tests**: Test individual units of code.
-- **Integration Tests**: Test how different modules work together.
-- **End-to-End Tests**: Test the entire application flow. 
+def add(a, b):
+    return a + b
 
-### Example with Jest (JavaScript)
-```javascript
-test('adds 1 + 2 to equal 3', () => {
-  expect(1 + 2).toBe(3);
-});
+
+def test_add():
+    assert add(1, 2) == 3
+    assert add(-1, 1) == 0
 ```
 
-### Resources
-- [Jest Documentation](https://jestjs.io/docs/en/getting-started.html)
-- [TDD in Python with unittest](https://docs.python.org/3/library/unittest.html)
+### Fixtures
+```python
+@pytest.fixture
+def sample_data():
+    return [1, 2, 3]
 
-## API Design & CORS
 
-Designing good APIs is crucial for application efficiency and usability. CORS (Cross-Origin Resource Sharing) allows restricted resources to be requested from another domain.
-
-### Principles of Good API Design
-- Use RESTful principles where possible.
-- Make endpoints intuitive.
-- Provide clear documentation.
-
-### Example Code for Setting Up CORS (Express.js)
-```javascript
-const express = require('express');
-const cors = require('cors');
-
-const app = express();
-app.use(cors());   // Enable CORS for all routes
+def test_sample_data(sample_data):
+    assert sum(sample_data) == 6
 ```
 
-### Resources
-- [API Design Best Practices](https://www.restapitutorial.com/)
-- [Understanding CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+### Test Patterns
+- Arrange-Act-Assert
+- Given-When-Then
 
-## Database Performance
+### GitHub Actions Integration
+```yaml
+name: Python application
 
-Optimizing the database for performance is key to a responsive application.
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
-### Best Practices
-- Use indexing to speed up queries.
-- Normalize data to reduce redundancy.
-- Use caching for frequently queried data.
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-### Example of Creating an Index in SQL
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+    - name: Run tests
+      run: |
+        pytest
+```
+
+## API Design & CORS (Day 27.5)
+
+### API Versioning Strategies
+1. URL Versioning
+2. Header Versioning
+
+### CORS Configuration
+```python
+from flask import Flask
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
+```
+
+### Frontend Consumption Guide
+- Use Fetch API or Axios for API requests.
+
+## Database Performance (Day 35.5)
+
+### Indexes
+- Understand different indexing strategies.
+
+### N+1 Queries
+- Use tools like Django Debug Toolbar to identify N+1 issues.
+
+### EXPLAIN ANALYZE
 ```sql
-CREATE INDEX idx_name ON users (name);
+EXPLAIN ANALYZE SELECT * FROM users WHERE age > 25;
 ```
 
-### Resources
-- [SQL Performance Explained](https://use-the-index-luke.com/)
-- [Database Optimization Techniques](https://www.percona.com/resources/technical-webinars/various-database-optimization-techniques)
+### Query Optimization
+- Ensure proper indexing and avoid select *.
 
-## Git Workflows
+## Git Workflows (Day 2.5)
 
-A well-defined Git workflow enhances collaboration and code management.
+### Branching Strategies
+- Git Flow, GitHub Flow, and trunk-based development.
 
-### Popular Git Workflows
-- **Feature Branching**: Isolate feature development.
-- **Gitflow**: Structured branching model for managing releases.
+### Commit Message Standards
+- Use imperative mood.
 
-### Example of Creating a New Branch
-```bash
-git checkout -b new-feature
+### PR Templates
+```markdown
+## Proposed Changes
+
+- [ ] Feature
+- [ ] Bugfix
 ```
 
-### Resources
-- [Atlassian Git Tutorials](https://www.atlassian.com/git/tutorials)
-- [Understanding Git Workflows](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced/branching-strategies)
+### Code Review Checklists
+1. Code adheres to style guidelines.
+2. Proper tests are provided for new features.
+3. Performance considerations are addressed.
+
+---
+### Learning Resources
+- [pytest Documentation](https://docs.pytest.org/en/stable/)
+- [CORS Documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+- [Database Indexing](https://use-the-index-luke.com/)
+- [Git Guide](https://git-scm.com/doc)
+
+### Deliverables
+- Complete tests for all features.
+- CORS configurations deployed in staging.
+- Indexed database schema in production.
+- Documented Git workflow.
+
+---
+### Integration Instructions
+- Ensure backend is connected to the proper database.
+- Update CI/CD pipelines accordingly.
